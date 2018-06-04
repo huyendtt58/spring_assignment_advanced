@@ -11,7 +11,7 @@ public class AttendanceDetailsEntity {
     private Integer idTimeSlot;
     private String studentId;
     private Timestamp createDate;
-    private Boolean status;
+    private boolean status;
     private AttendanceSlotsEntity attendanceSlotsByIdTimeSlot;
     private StudentsEntity studentsByStudentId;
 
@@ -57,11 +57,11 @@ public class AttendanceDetailsEntity {
 
     @Basic
     @Column(name = "status", nullable = true)
-    public Boolean getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
@@ -102,4 +102,17 @@ public class AttendanceDetailsEntity {
     public void setStudentsByStudentId(StudentsEntity studentsByStudentId) {
         this.studentsByStudentId = studentsByStudentId;
     }
+
+	public AttendanceDetailsEntity(Integer idTimeSlot, String studentId, Timestamp createDate, Boolean status) {
+		super();
+		this.idTimeSlot = idTimeSlot;
+		this.studentId = studentId;
+		this.createDate = createDate;
+		this.status = status;
+	}
+
+	public AttendanceDetailsEntity() {
+		super();
+	}
+    
 }
