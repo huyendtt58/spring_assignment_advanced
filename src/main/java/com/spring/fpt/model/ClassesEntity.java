@@ -1,4 +1,4 @@
-package com.spring.fpt.Model;
+package com.spring.fpt.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -15,7 +15,7 @@ public class ClassesEntity {
     private Collection<StudentClassEntity> studentClassesByClassId;
 
     @Id
-    @Column(name = "class_id", nullable = false, length = 50)
+    @Column(name = "class_id", nullable = false, length = 50, insertable=false, updatable=false)
     public String getClassId() {
         return classId;
     }

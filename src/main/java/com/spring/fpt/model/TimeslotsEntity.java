@@ -1,4 +1,4 @@
-package com.spring.fpt.Model;
+package com.spring.fpt.model;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -12,7 +12,7 @@ public class TimeslotsEntity {
     private Collection<AttendanceSlotsEntity> attendanceSlotsBySlotId;
 
     @Id
-    @Column(name = "slot_id", nullable = false)
+    @Column(name = "slot_id", nullable = false, insertable=false, updatable=false)
     public int getSlotId() {
         return slotId;
     }

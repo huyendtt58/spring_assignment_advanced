@@ -1,4 +1,4 @@
-package com.spring.fpt.Model;
+package com.spring.fpt.model;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -13,7 +13,7 @@ public class StudentsEntity {
     private Collection<StudentClassEntity> studentClassesByStudentId;
 
     @Id
-    @Column(name = "student_id", nullable = false, length = 50)
+    @Column(name = "student_id", nullable = false, length = 50, insertable=false, updatable=false)
     public String getStudentId() {
         return studentId;
     }

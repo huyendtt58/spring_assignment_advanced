@@ -1,4 +1,4 @@
-package com.spring.fpt.Model;
+package com.spring.fpt.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -26,7 +26,7 @@ public class AttendanceDetailsEntity {
     }
 
     @Basic
-    @Column(name = "id_time_slot", nullable = true)
+    @Column(name = "id_time_slot", nullable = true, insertable=false, updatable=false)
     public Integer getIdTimeSlot() {
         return idTimeSlot;
     }
@@ -36,7 +36,7 @@ public class AttendanceDetailsEntity {
     }
 
     @Basic
-    @Column(name = "student_id", nullable = true, length = 50)
+    @Column(name = "student_id", nullable = true, length = 50, insertable=false, updatable=false)
     public String getStudentId() {
         return studentId;
     }

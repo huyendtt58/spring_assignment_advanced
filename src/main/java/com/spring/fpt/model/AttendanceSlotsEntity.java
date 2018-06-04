@@ -1,4 +1,4 @@
-package com.spring.fpt.Model;
+package com.spring.fpt.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -29,7 +29,7 @@ public class AttendanceSlotsEntity {
     }
 
     @Basic
-    @Column(name = "class_id", nullable = false, length = 50)
+    @Column(name = "class_id", nullable = false, length = 50, insertable=false, updatable=false)
     public String getClassId() {
         return classId;
     }
@@ -39,7 +39,7 @@ public class AttendanceSlotsEntity {
     }
 
     @Basic
-    @Column(name = "slot_id", nullable = false)
+    @Column(name = "slot_id", nullable = false, insertable=false, updatable=false)
     public int getSlotId() {
         return slotId;
     }

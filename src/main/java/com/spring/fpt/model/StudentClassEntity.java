@@ -1,14 +1,18 @@
-package com.spring.fpt.Model;
+package com.spring.fpt.model;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 @Table(name = "student_class", schema = "spring_assignment_advanced", catalog = "")
-@IdClass(StudentClassEntityPK.class)
-public class StudentClassEntity {
-    private String studentId;
+//@IdClass(StudentClassEntityPK.class)
+public class StudentClassEntity implements Serializable {
+
+	private static final long serialVersionUID = -5050729727708823474L;
+	private String studentId;
     private String classId;
     private Timestamp createDate;
     private Boolean status;
@@ -16,7 +20,7 @@ public class StudentClassEntity {
     private ClassesEntity classesByClassId;
 
     @Id
-    @Column(name = "student_id", nullable = false, length = 50)
+    @Column(name = "student_id", nullable = false, length = 50, insertable=false, updatable=false)
     public String getStudentId() {
         return studentId;
     }
@@ -26,7 +30,7 @@ public class StudentClassEntity {
     }
 
     @Id
-    @Column(name = "class_id", nullable = false, length = 50)
+    @Column(name = "class_id", nullable = false, length = 50, insertable=false, updatable=false)
     public String getClassId() {
         return classId;
     }

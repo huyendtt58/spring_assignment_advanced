@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Test</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" th:href="@{/bootstrap-4.1.1/css/bootstrap.min.css}" />
+</head>
+<body>
+  <p>Timeslots today <span th:text="${nowDate}"></span></p>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Slot ID</th>
+        <th scope="col">Timeslot</th>
+        <th scope="col">Subject</th>
+        <th scope="col">Class ID</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="attSlots: ${listExistAttSlots}">
+        <td th:text="${attSlots.key.slotId}"></td>
+        <td th:text="${attSlots.key.timeslotsBySlotId.slotTime}"></td>
+        <td th:text="${attSlots.key.subjectCode}"></td>
+        <td th:text="${attSlots.key.classId}"></td>
+        <td th:switch="${attSlots.value}">
+          <a th:case="true" th:href="@{/attend(id=${attSlots.key.id})}" th:text="View"></a>
+          <a th:case="false" th:href="@{/attend(id=${attSlots.key.id})}" th:text="Take"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
