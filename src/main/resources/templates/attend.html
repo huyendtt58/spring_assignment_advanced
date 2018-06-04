@@ -5,6 +5,28 @@
 <title>Att</title>
 </head>
 <body>
-
+  <form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Rollnumber</th>
+          <th scope="col">Name</th>
+          <th scope="col">Present</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="student: ${listStu}">
+          <td th:text="${student.studentId}"></td>
+          <td th:text="${student.studentName}"></td>
+          <td th:if="${student.attendanceDetailsByStudentId.status}">
+            <input type="checkbox" checked="checked">
+          </td>
+          <td th:if="${student.attendanceDetailsByStudentId.status}">
+            <input type="checkbox">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
 </body>
 </html>

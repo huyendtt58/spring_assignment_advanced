@@ -15,7 +15,7 @@ public class StudentClassEntity implements Serializable {
 	private String studentId;
     private String classId;
     private Timestamp createDate;
-    private Boolean status;
+    private boolean status;
     private StudentsEntity studentsByStudentId;
     private ClassesEntity classesByClassId;
 
@@ -51,11 +51,11 @@ public class StudentClassEntity implements Serializable {
 
     @Basic
     @Column(name = "status", nullable = true)
-    public Boolean getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(Boolean status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
